@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.CucumberProject</groupId>
+  <artifactId>MavenCucumberProject</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>MavenCucumberProject</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <suiteXmlFile>MainCucumberProject/testng.xml</suiteXmlFile>
+  </properties>
+
+  <dependencies>
+    
+      <!--junit dependencies   --> 
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+       </dependency>
+    
+    <!-- Adding testng dependency --> 
+
+     <dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>6.13.1</version>
+    </dependency>  
+   
+ <!-- Adding Selenium dependency -->
+
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+
+<!-- Adding Apache poi  dependency -->
+ 
+ <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.15</version>
+</dependency>
+    
+ <!-- Adding twillo API dependency for sending SMS otp code  -->  
+ 
+ <dependency>
+  <groupId>com.twilio.sdk</groupId>
+  <artifactId>twilio</artifactId>
+  <version>7.42.0</version>
+  </dependency> 
+  
+   <!-- Adding webdrivermanager dependency  -->  
+   <dependency>
+  <groupId>io.github.bonigarcia</groupId>
+  <artifactId>webdrivermanager</artifactId>
+  <version>3.6.2</version>
+  </dependency> 
+  
+  <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+    <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.15</version>
+</dependency>
+
+ <!-- Adding cucumber  dependency  -->
+   <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java8</artifactId>
+    <version>4.7.4</version>
+   <!--  <scope>test</scope>  remove this scope tag otherwise dependency will not be seen under src
+   main folder --> 
+</dependency> 
+
+
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>4.7.4</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+<dependency>
+    <groupId>net.masterthought</groupId>
+    <artifactId>cucumber-reporting</artifactId>
+    <version>4.10.0</version>
+</dependency>
+
+    
+  </dependencies>
+  
+  <build>
+ 
+<plugins>
+ 
+<plugin>
+<groupId>com.CucumberProject</groupId>
+<artifactId>MavenCucumberProject</artifactId>
+<version>3.6.0</version>
+<configuration>
+<compilerVersion>1.8</compilerVersion>
+<source>1.6</source>
+<target>1.6</target>
+</configuration>
+</plugin>
+ 
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>2.17</version>
+<configuration>
+ 
+<suiteXmlFiles>
+<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+</suiteXmlFiles>
+ 
+</configuration>
+</plugin>
+ 
+</plugins>
+ 
+</build> 
+  
+</project>
