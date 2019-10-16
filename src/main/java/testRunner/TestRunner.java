@@ -22,9 +22,9 @@ import io.cucumber.junit.CucumberOptions;
 		
 		//it will generate cucumber html report 
 	    monochrome = true ,//display the console output in proper readable format 
-	    dryRun = true //if its true -it will verify each feature step is having step definition code 
-	    //make it as false to run the tests 
-		
+	    dryRun = false, //if its true -it will verify each feature step is having step definition code  with 
+	    //correct mapping ,(mapping correct)make it as false to run the tests 
+		strict = true //it will check if any step is not defined in the step definition file 
 		)
 
 public class TestRunner {
