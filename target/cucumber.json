@@ -1,228 +1,103 @@
 [
   {
-    "line": 1,
+    "line": 2,
     "elements": [
       {
-        "start_timestamp": "2019-10-16T17:56:08.033Z",
-        "line": 3,
-        "name": "Login and navigate to dashboard",
+        "start_timestamp": "2019-10-21T17:13:58.467Z",
+        "before": [
+          {
+            "result": {
+              "duration": 10001532000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefinition.setup()"
+            }
+          }
+        ],
+        "line": 49,
+        "name": "To check the hooks features of the cucumber",
         "description": "",
-        "id": "login-openorangehrm-page-and-logout;login-and-navigate-to-dashboard",
+        "id": "login-openorangehrm-page-and-logout;to-check-the-hooks-features-of-the-cucumber",
+        "after": [
+          {
+            "result": {
+              "duration": 82772600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LoginStepDefinition.teardown()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 2561130,
-              "status": "skipped"
+              "duration": 1756600,
+              "status": "passed"
             },
-            "line": 5,
-            "name": "User is already on home page",
+            "line": 50,
+            "name": "user is on orangehrm page",
             "match": {
-              "location": "LoginStepDefinition.user_already_on_loginpage()"
+              "location": "LoginStepDefinition.user_homepage()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1380058,
-              "status": "skipped"
+              "duration": 3220314700,
+              "status": "passed"
             },
-            "line": 6,
-            "name": "title of login page is OrangeHRM",
-            "match": {
-              "location": "LoginStepDefinition.verify_title()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1267916,
-              "status": "skipped"
-            },
-            "line": 7,
-            "name": "User enters \u0027Admin\u0027 and \u0027admin123\u0027",
+            "line": 51,
+            "name": "User enters credentials\u0027Admin\u0027 and \u0027admin123\u0027",
             "match": {
               "arguments": [
                 {
                   "val": "Admin",
-                  "offset": 13
+                  "offset": 24
                 },
                 {
                   "val": "admin123",
-                  "offset": 25
+                  "offset": 36
                 }
               ],
-              "location": "LoginStepDefinition.EnterCredentials(String,String)"
+              "location": "LoginStepDefinition.Enteruser(String,String)"
             },
-            "keyword": "And "
+            "keyword": "When "
           },
           {
             "result": {
-              "duration": 1971349,
-              "status": "skipped"
+              "duration": 5064923400,
+              "status": "passed"
             },
-            "line": 8,
-            "name": "User clicks on login button",
+            "line": 52,
+            "name": "User logins successfully",
             "match": {
-              "location": "LoginStepDefinition.loginclick()"
+              "location": "LoginStepDefinition.loginsuccess()"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 2021567,
-              "status": "skipped"
+              "duration": 2315500,
+              "status": "passed"
             },
-            "line": 9,
-            "name": "User is navigated to OrangeHRM Dashboard Page",
+            "line": 53,
+            "name": "User logout application",
             "match": {
-              "location": "LoginStepDefinition.navigatedashboard()"
+              "location": "LoginStepDefinition.logoutsuccess()"
             },
             "keyword": "Then "
           }
-        ]
-      },
-      {
-        "start_timestamp": "2019-10-16T17:56:08.104Z",
-        "line": 12,
-        "name": "Create new user and verify the new user and logout",
-        "description": "",
-        "id": "login-openorangehrm-page-and-logout;create-new-user-and-verify-the-new-user-and-logout",
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
+        ],
+        "tags": [
           {
-            "result": {
-              "duration": 752519,
-              "status": "skipped"
-            },
-            "line": 13,
-            "name": "User is already on dashboard page",
-            "match": {
-              "location": "LoginStepDefinition.user_already_on_dashboardpage()"
-            },
-            "keyword": "Given "
+            "name": "@FunctionalTest"
           },
           {
-            "result": {
-              "duration": 1017581,
-              "status": "skipped"
-            },
-            "line": 14,
-            "name": "User navigates to User button and clicks on User link",
-            "match": {
-              "location": "LoginStepDefinition.usernavigatetoUserLink()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 1089321,
-              "status": "skipped"
-            },
-            "line": 15,
-            "name": "User clicks on Add Button",
-            "match": {
-              "location": "LoginStepDefinition.user_clicks_addbutton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 595067,
-              "status": "skipped"
-            },
-            "line": 16,
-            "name": "User Selects User Role",
-            "match": {
-              "location": "LoginStepDefinition.user_select_userrole()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2063479,
-              "status": "skipped"
-            },
-            "line": 17,
-            "name": "User enters EmployeeName and Username as \u0027jeet2700\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "jeet2700",
-                  "offset": 42
-                }
-              ],
-              "location": "LoginStepDefinition.enterdetails(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 388530,
-              "status": "skipped"
-            },
-            "line": 18,
-            "name": "User enters Password details",
-            "match": {
-              "location": "LoginStepDefinition.enterPasswordDetails()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 647551,
-              "status": "skipped"
-            },
-            "line": 19,
-            "name": "User clicks on Save Button",
-            "match": {
-              "location": "LoginStepDefinition.clickSaveButton()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 640377,
-              "status": "skipped"
-            },
-            "line": 20,
-            "name": "User Searches with Username as \u0027jeet2700\u0027",
-            "match": {
-              "arguments": [
-                {
-                  "val": "jeet2700",
-                  "offset": 32
-                }
-              ],
-              "location": "LoginStepDefinition.UserNameSearch(String)"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 869191,
-              "status": "skipped"
-            },
-            "line": 21,
-            "name": "Verify the User is successfully added",
-            "match": {
-              "location": "LoginStepDefinition.VerifyUserName()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 384755,
-              "status": "skipped"
-            },
-            "line": 22,
-            "name": "User logouts the OrangeHRM Application",
-            "match": {
-              "location": "LoginStepDefinition.LogoutHRMApplication()"
-            },
-            "keyword": "And "
+            "name": "@test"
           }
         ]
       }
@@ -232,6 +107,15 @@
     "id": "login-openorangehrm-page-and-logout",
     "keyword": "Feature",
     "uri": "file:featurefiles/Login.feature",
-    "tags": []
+    "tags": [
+      {
+        "name": "@FunctionalTest",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
   }
 ]

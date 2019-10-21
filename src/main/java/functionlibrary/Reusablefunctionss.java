@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -14,15 +15,18 @@ import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -248,8 +252,8 @@ public class Reusablefunctionss {
 	     {
 	    	 
 	     By byLocator = elementLocator(locator) ;
-	     WebDriverWait wait  = new WebDriverWait(driver, 30);
-	     wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator)) ;
+	     WebDriverWait wait  = new WebDriverWait(driver, Duration.ofSeconds(10));
+	     wait.until(ExpectedConditions.visibilityOfElementLocated(byLocator));
 	     
 	     }
 	     
@@ -319,18 +323,17 @@ public class Reusablefunctionss {
 	    	if (browsername.equalsIgnoreCase("Chrome")) 
 	    	{
 	    	System.setProperty("webdriver.chrome.driver", "E:\\Drivers\\chromedriver.exe");
-	    
-	    	DesiredCapabilities capabilities = DesiredCapabilities.chrome() ;
+	    	//DesiredCapabilities capabilities = DesiredCapabilities.chrome() ;
 	    	ChromeOptions options = new ChromeOptions();
 	    	options.addArguments("disable-infobars");
 	    	options.addArguments("--disable-web-security");
 	    	options.addArguments("--allow-running-insecure-content");
-	    	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//	    	capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//	    	
+//	    	capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 	    	
-	    	capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-	    	
-	    	driver = new ChromeDriver (capabilities);
-	    	//driver = new ChromeDriver(options);
+	    	//driver = new ChromeDriver (capabilities);
+	    	driver = new ChromeDriver(options);
 	    	
 	    	
 	    	
@@ -339,15 +342,17 @@ public class Reusablefunctionss {
 	    	else if (browsername.equalsIgnoreCase("IE")) {
 	    	System.setProperty("webdriver.ie.driver", "E:\\Drivers\\IEDriverServer.exe");
 	    	
-	    	DesiredCapabilities capab = DesiredCapabilities.internetExplorer();
-	    	capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-	    	capab.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
-	    	capab.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
-	    	capab.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
-	    	driver = new InternetExplorerDriver(capab);
+	    	//DesiredCapabilities capab = DesiredCapabilities.internetExplorer();
+	    	InternetExplorerOptions ioptions = new InternetExplorerOptions();
+	    	ioptions.setAcceptInsecureCerts(true);
+//	    	capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+//	    	capab.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
+//	    	capab.setCapability(InternetExplorerDriver.IE_ENSURE_CLEAN_SESSION, true);
+//	    	capab.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
+	    	driver = new InternetExplorerDriver(ioptions);
 	    	}
 	    	else {
-	    		AssertJUnit.assertTrue("Invalid Browser", false);
+	    		Assert.assertTrue("Invalid Browser", false);
 	    	}
 	    	driver.manage().window().maximize();
 	    	driver.get(url);
@@ -359,6 +364,37 @@ public class Reusablefunctionss {
 			}
 	     }
 	     
-	    
+	     
+	     //take Screenshot of particular WebElement 
+	 	public static void takeWebElementScreenshot(WebElement element, String filename)  {
+			
+			File srcFile = element.getScreenshotAs(OutputType.FILE);
+			
+			try {
+				FileUtils.copyFile(srcFile, new File("./Screenshots/" + filename + ".png"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			
 		}
+	    
+	 	
+	 	//take Screenshot of particular WebElement -2nd way 
+		public static void captureWebElementScreenshot (WebElement element , String fileName ) {
+			
+			TakesScreenshot ts = ((TakesScreenshot)element) ;
+			File srcfile = ts.getScreenshotAs(OutputType.FILE);
+			try {
+				FileUtils.copyFile(srcfile, new File ("./Screenshots/" + fileName +".png"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		      }
+
+		          }
 

@@ -2,166 +2,70 @@ $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.
 formatter.feature({
   "name": "Login OpenOrangeHRM page and logout",
   "description": "",
-  "keyword": "Feature"
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@FunctionalTest"
+    }
+  ]
 });
 formatter.scenario({
-  "name": "Login and navigate to dashboard",
+  "name": "To check the hooks features of the cucumber",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@FunctionalTest"
+    },
+    {
+      "name": "@test"
+    }
+  ]
+});
+formatter.before({
+  "status": "passed"
 });
 formatter.step({
-  "name": "User is already on home page",
+  "name": "user is on orangehrm page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "LoginStepDefinition.user_already_on_loginpage()"
+  "location": "LoginStepDefinition.user_homepage()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "title of login page is OrangeHRM",
+  "name": "User enters credentials\u0027Admin\u0027 and \u0027admin123\u0027",
   "keyword": "When "
 });
 formatter.match({
-  "location": "LoginStepDefinition.verify_title()"
+  "location": "LoginStepDefinition.Enteruser(String,String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "User enters \u0027Admin\u0027 and \u0027admin123\u0027",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.EnterCredentials(String,String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User clicks on login button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.loginclick()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User is navigated to OrangeHRM Dashboard Page",
+  "name": "User logins successfully",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepDefinition.navigatedashboard()"
+  "location": "LoginStepDefinition.loginsuccess()"
 });
 formatter.result({
-  "status": "skipped"
-});
-formatter.scenario({
-  "name": "Create new user and verify the new user and logout",
-  "description": "",
-  "keyword": "Scenario"
+  "status": "passed"
 });
 formatter.step({
-  "name": "User is already on dashboard page",
-  "keyword": "Given "
-});
-formatter.match({
-  "location": "LoginStepDefinition.user_already_on_dashboardpage()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User navigates to User button and clicks on User link",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "LoginStepDefinition.usernavigatetoUserLink()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User clicks on Add Button",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "LoginStepDefinition.user_clicks_addbutton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User Selects User Role",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.user_select_userrole()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User enters EmployeeName and Username as \u0027jeet2700\u0027",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.enterdetails(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User enters Password details",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.enterPasswordDetails()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User clicks on Save Button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.clickSaveButton()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "User Searches with Username as \u0027jeet2700\u0027",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.UserNameSearch(String)"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.step({
-  "name": "Verify the User is successfully added",
+  "name": "User logout application",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepDefinition.VerifyUserName()"
+  "location": "LoginStepDefinition.logoutsuccess()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.step({
-  "name": "User logouts the OrangeHRM Application",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefinition.LogoutHRMApplication()"
-});
-formatter.result({
-  "status": "skipped"
+formatter.after({
+  "status": "passed"
 });
 });

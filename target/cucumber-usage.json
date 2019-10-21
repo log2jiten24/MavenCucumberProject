@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "source": "^user is on orangehrm page$",
+    "steps": [
+      {
+        "name": "user is on orangehrm page",
+        "aggregatedDurations": {
+          "median": 0.0017566,
+          "average": 0.001756600
+        },
+        "durations": [
+          {
+            "duration": 0.0017566,
+            "location": "file:featurefiles/Login.feature:50"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^User enters credentials\u0027(.*)\u0027 and \u0027(.*)\u0027$",
+    "steps": [
+      {
+        "name": "User enters credentials\u0027Admin\u0027 and \u0027admin123\u0027",
+        "aggregatedDurations": {
+          "median": 3.2203147,
+          "average": 3.220314700
+        },
+        "durations": [
+          {
+            "duration": 3.2203147,
+            "location": "file:featurefiles/Login.feature:51"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "User logins successfully$",
+    "steps": [
+      {
+        "name": "User logins successfully",
+        "aggregatedDurations": {
+          "median": 5.0649234,
+          "average": 5.064923400
+        },
+        "durations": [
+          {
+            "duration": 5.0649234,
+            "location": "file:featurefiles/Login.feature:52"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "User logout application$",
+    "steps": [
+      {
+        "name": "User logout application",
+        "aggregatedDurations": {
+          "median": 0.0023155,
+          "average": 0.002315500
+        },
+        "durations": [
+          {
+            "duration": 0.0023155,
+            "location": "file:featurefiles/Login.feature:53"
+          }
+        ]
+      }
+    ]
+  }
+]

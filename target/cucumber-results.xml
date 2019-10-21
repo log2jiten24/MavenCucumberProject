@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="0.071621">
-<testcase classname="Login OpenOrangeHRM page and logout" name="Login and navigate to dashboard" time="0.05564">
-<system-out><![CDATA[Given User is already on home page..........................................skipped
-When title of login page is OrangeHRM.......................................skipped
-And User enters 'Admin' and 'admin123'......................................skipped
-And User clicks on login button.............................................skipped
-Then User is navigated to OrangeHRM Dashboard Page..........................skipped
-]]></system-out>
-</testcase>
-<testcase classname="Login OpenOrangeHRM page and logout" name="Create new user and verify the new user and logout" time="0.015981">
-<system-out><![CDATA[Given User is already on dashboard page.....................................skipped
-When User navigates to User button and clicks on User link..................skipped
-When User clicks on Add Button..............................................skipped
-And User Selects User Role..................................................skipped
-And User enters EmployeeName and Username as 'jeet2700'.....................skipped
-And User enters Password details............................................skipped
-And User clicks on Save Button..............................................skipped
-And User Searches with Username as 'jeet2700'...............................skipped
-Then Verify the User is successfully added..................................skipped
-And User logouts the OrangeHRM Application..................................skipped
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="18.466373">
+<testcase classname="Login OpenOrangeHRM page and logout" name="To check the hooks features of the cucumber" time="18.466373">
+<system-out><![CDATA[Given user is on orangehrm page.............................................passed
+When User enters credentials'Admin' and 'admin123'..........................passed
+Then User logins successfully...............................................passed
+Then User logout application................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

@@ -1,20 +1,9 @@
+@FunctionalTest
 Feature: Login OpenOrangeHRM page and logout
 
-  Scenario: Login and navigate to dashboard            # featurefiles/Login.feature:3
-    Given User is already on home page                 # LoginStepDefinition.user_already_on_loginpage()
-    When title of login page is OrangeHRM              # LoginStepDefinition.verify_title()
-    And User enters 'Admin' and 'admin123'             # LoginStepDefinition.EnterCredentials(String,String)
-    And User clicks on login button                    # LoginStepDefinition.loginclick()
-    Then User is navigated to OrangeHRM Dashboard Page # LoginStepDefinition.navigatedashboard()
-
-  Scenario: Create new user and verify the new user and logout # featurefiles/Login.feature:12
-    Given User is already on dashboard page                    # LoginStepDefinition.user_already_on_dashboardpage()
-    When User navigates to User button and clicks on User link # LoginStepDefinition.usernavigatetoUserLink()
-    When User clicks on Add Button                             # LoginStepDefinition.user_clicks_addbutton()
-    And User Selects User Role                                 # LoginStepDefinition.user_select_userrole()
-    And User enters EmployeeName and Username as 'jeet2700'    # LoginStepDefinition.enterdetails(String)
-    And User enters Password details                           # LoginStepDefinition.enterPasswordDetails()
-    And User clicks on Save Button                             # LoginStepDefinition.clickSaveButton()
-    And User Searches with Username as 'jeet2700'              # LoginStepDefinition.UserNameSearch(String)
-    Then Verify the User is successfully added                 # LoginStepDefinition.VerifyUserName()
-    And User logouts the OrangeHRM Application                 # LoginStepDefinition.LogoutHRMApplication()
+  @FunctionalTest @test
+  Scenario: To check the hooks features of the cucumber # featurefiles/Login.feature:49
+    Given user is on orangehrm page                     # LoginStepDefinition.user_homepage()
+    When User enters credentials'Admin' and 'admin123'  # LoginStepDefinition.Enteruser(String,String)
+    Then User logins successfully                       # LoginStepDefinition.loginsuccess()
+    Then User logout application                        # LoginStepDefinition.logoutsuccess()
